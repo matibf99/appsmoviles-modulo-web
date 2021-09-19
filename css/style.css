@@ -252,7 +252,7 @@ input, select {
     width: 100%;
     color: var(--darker-grey);
     padding: 0.5rem 0.6rem;
-    border: 2px var(--main) solid; 
+    border: 2px var(--light-grey) solid; 
     background: var(--white);
     border-radius: 0.2rem;
     font-size: 1rem;
@@ -262,12 +262,20 @@ input, select {
 }
 
 input:hover, input:focus, select:hover, select:focus {
-    border: 2px var(--main-darker) solid;
+    border: 2px var(--grey) solid;
     outline: none;
 }
 
+.input-invalid {
+    border: 2px var(--main) solid;
+}
+
+.input-invalid:hover, .input-invalid:focus {
+    border: 2px var(--main-darker) solid;
+}
+
 .encuesta-content {
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0rem;
     display: flex;
     flex-direction: column;
 }
@@ -278,6 +286,15 @@ input:hover, input:focus, select:hover, select:focus {
     padding-bottom: 0.4rem;
     font-size: 1rem;
     font-weight: bold;
+}
+
+.encuesta-field-invalid {
+    font-size: 0.9rem;
+    color: var(--main-darker);
+}
+
+.invisible {
+    display: none;
 }
 
 .btn-text {
