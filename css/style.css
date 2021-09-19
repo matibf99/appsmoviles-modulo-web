@@ -89,32 +89,39 @@
 }
 
 .encuesta-invitation {
-    margin: 0.6rem 1rem;
-    background-color: var(--main);
+    margin: 2rem;
+    padding: 0.7rem;
+    border: 0.25rem var(--main) solid;
     --webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
-    border-radius: 0.5rem;
+    color: var(--main);
 }
 
 .encuesta-invitation:hover {
-    background-color: var(--main-darker);
+    background-color: var(--main);
+    color: var(--white);
 }
 
 .encuesta-invitation a {
+    width: 100%;
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    color: var(--white);
-}   
+    color: inherit;
+}
 
-.categoria-selector {
+.encuesta-invitation a:hover {
+    color: var(--white);
+}
+
+.aside {
     color: var(--black);
     text-align: center;
     width: 100%;
     margin-top: 1.5rem;
 }
 
-.categoria-selector div {
+.categoria-selector {
     padding: 0.7rem 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -346,7 +353,7 @@ button {
         align-items: flex-start;
     }
 
-    .categoria-selector {
+    .aside {
         color: var(--black);
         margin: 6rem 0px;
         min-width: 240px;
@@ -356,7 +363,7 @@ button {
         text-align: left;
     }
     
-    .categoria-selector div {
+    .categoria-selector {
         justify-content: flex-start;
     }
 
@@ -372,6 +379,10 @@ button {
     .categoria-content {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .encuesta-invitation {
+        margin: 0.6rem 0rem;
     }
 }
 
