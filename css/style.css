@@ -98,18 +98,21 @@
 .categoria-selector div {
     padding: 0.7rem 1rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     text-decoration: none;
 }
 
 .categoria-selector-title {
+    width: 100%;
     font-size: 1.3rem;
     font-weight: bold;
-    padding: 1rem 0;
+    padding: 1rem 0.3rem;
 }
 
 .categoria-selector-link {
     padding: 0.2rem 0rem;
+    margin: 0 0.3rem;
     color: var(--darker-grey);
     font-size: 1.2rem;
     text-decoration: none;
