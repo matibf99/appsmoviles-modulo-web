@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Open+Sans:ital,wght@0,300;0,600;0,700;0,800;1,400&family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
 
 :root {
     font-family: "Inter", sans-serif;
@@ -33,7 +33,6 @@
 
 .navbar {
     background-color: var(--main-bg);
-    padding: 0 0.5rem;
     border-bottom: 1px var(--light-grey) solid;
 }
 
@@ -101,6 +100,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     text-decoration: none;
+    justify-content: center;
 }
 
 .categoria-selector-title {
@@ -126,18 +126,19 @@
 }
 
 .games {
+    width: calc(100% - 4rem);
     margin: 2rem 2rem;
     flex-grow: 1;
 }
 
-.categoria-title {
+.categoria-title, .encuesta-title {
     background-color: var(--main);
     width: 100%;
     display: block;
     border-radius: 0px;
 }
 
-.categoria-title h4 {
+.categoria-title h4, .encuesta-title h4 {
     color: var(--white);
     font-size: 2rem;
     text-align: center;
@@ -212,10 +213,94 @@
 }
 
 .footer {
-    padding: 2rem;
+    padding: 2rem 0;
     background-color: var(--black);
     color: var(--white);
     text-align: center;
+}
+
+input, select {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    color: var(--darker-grey);
+    padding: 0.5rem 0.6rem;
+    border: 2px var(--main) solid; 
+    background: var(--white);
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--darker-grey);
+    transition: border 0.3s;
+}
+
+input:hover, input:focus, select:hover, select:focus {
+    border: 2px var(--main-darker) solid;
+    outline: none;
+}
+
+.encuesta-content {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.encuesta-label {
+    display: block;
+    padding-top: 0.8rem;
+    padding-bottom: 0.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-text {
+    margin: 1rem 0;
+    padding: 0.3rem 0;
+    color: var(--main);
+    font-size: 1rem;
+    font-weight: bold;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.btn-text:hover {
+    color: var(--main-darker);
+}
+
+.btn-filled {
+    width: 100%;
+    margin: 0.3rem 0;
+    padding: 1rem 0.5rem;
+    color: var(--white);
+    background-color: var(--main);
+    font-size: 1.2rem;
+    font-weight: bold;
+    --webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.btn-filled:hover, .btn-filled:focus {
+    background-color: var(--main-darker);
+}
+
+.btn-filled-blue {
+    background-color: var(--darker-grey);
+}
+
+.btn-filled-blue:hover {
+    background-color: var(--black);
+}
+
+section {
+    width: 100%;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 @media (min-width: 640px) {
@@ -249,6 +334,10 @@
         height: auto;
         font-size: 1rem;
         text-align: left;
+    }
+    
+    .categoria-selector div {
+        justify-content: flex-start;
     }
 
     .categoria-selector-title {
