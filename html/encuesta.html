@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+        <title>GameMaster</title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header class="navbar container">
+            <div class="navbar-content">
+                <!-- LOGO -->
+                <a href="./index.html" class="navbar-logo">
+                    <i>
+                        <img src="/img/gamepad-square.png" alt="" />
+                    </i>
+                </a>
+                <!-- TITULO -->
+                <div class="navbar-text">
+                    <a href="./index.html" class="navbar-title">GameMaster</a>
+                    <h6 class="navbar-subtitle">TU MEJOR OPCIÓN</h6>
+                </div>
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <div class="container container-body">
+            <!-- ASIDE -->
+            <aside class="aside">
+                <div class="encuesta-invitation">
+                    <a href="./encuesta.html">¡Participá en nuestra encuesta!</a>
+                </div>
+                <div class="category-selector">
+                    <h3 class="categoria-selector-title">Categorías</h3>
+
+                    <a href="./accion.html" class="categoria-selector-link">
+                        Acción
+                    </a>
+                    <a href="./arcade.html" class="categoria-selector-link">
+                        Arcade
+                    </a>
+                    <a href="./deportes.html" class="categoria-selector-link">
+                        Deportes
+                    </a>
+                    <a href="./estrategia.html" class="categoria-selector-link">
+                        Estrategia
+                    </a>
+                    <a href="./simulacion.html" class="categoria-selector-link">
+                        Simulación
+                    </a>
+                    <a
+                        href="./juegos-de-mesa.html"
+                        class="categoria-selector-link"
+                    >
+                        Juegos de mesa
+                    </a>
+                </div>
+            </aside>
+
+            <div class="games">
+                <section>
+                    <div class="encuesta-title" id="encuesta">
+                        <h4>ENCUESTA</h4>
+                    </div>
+                    <div class="encuesta-content">
+                        <form>
+                            <label for="nombre" class="encuesta-label">Nombre</label>
+                            <input type="text" id="nombre">
+                            <label for="apellido" class="encuesta-label">Apellido</label>
+                            <input type="text" id="apellido">
+                            <label for="fecha-nacimiento" class="encuesta-label">Fecha de nacimiento</label>
+                            <input type="text" id="fecha-nacimiento">
+                            <label for="sexo" class="encuesta-label">Sexo</label>
+                            <select id="sexo">
+                                <option value="male">Masculino</option>
+                                <option value="female">Femenino</option>
+                                <option value="other">Otro</option>
+                            </select>
+                            <label for="valoracion" class="encuesta-label">Valoración de la página</label>
+                            <select id="valoracion">
+                                <option value="me-encanto">Me encantó</option>
+                                <option value="cumple">Cumple con mis expectativas</option>
+                                <option value="podria-mejorar">Podría ser mejor</option>
+                                <option value="mala">Mala</option>
+                                <option value="lamentable">Lamentable</option>
+                            </select>
+                            <label for="mail" class="encuesta-label">Email</label>
+                            <input type="email" id="mail">
+                            <label for="comentario" class="encuesta-label">Comentario</label>
+                            <input type="text" id="comentario">
+
+                            <button class="btn-text" type="button">Restablecer valores</button>
+                            <button class="btn-filled" type="button">CANCELAR</button>
+                            <button class="btn-filled btn-filled-blue" type="button">ENVIAR</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <p>Matías Gabriel Busum Fradera, Facundo Ariel Chazarreta.</p>
+                <p>UNAJ. Aplicaciones móviles 2C 2021.</p>
+                <br />
+                <p>GM © 2021 GamesMaster. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
+</html>
