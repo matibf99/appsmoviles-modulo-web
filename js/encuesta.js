@@ -97,22 +97,17 @@ let btnEnviar = document.getElementById("button-send");
 btnEnviar.addEventListener("click", enviar);
 
 
-
-
 function enviar(sel){
-    
-    
     alert("Nombre: "+ nombre.value+ "\n" +
     "Apellido: "+ apellido.value + "\n"+
-    "Fecha de nacimiento: "+ fechaNacimiento.value + "\n"+ 
+    "Fecha de nacimiento: "+ fechaNacimiento.value + "\n"+
     "Sexo: " + sexo.options[sexo.selectedIndex].text + "\n"+
-    "Valoracion: "+ valoracion.options[valoracion.selectedIndex].text + "\n"+
+    "Valoración: "+ valoracion.options[valoracion.selectedIndex].text + "\n"+
     "Email: "+email.value + "\n"+
     "Comentario: "+comentario.value);
-    
 }
 
-//Restablecer valores
+// Restablecer valores
 let btnRestart = document.getElementById("btn-restablecer");
 btnRestart.addEventListener("click", restablecer);
 
@@ -126,7 +121,7 @@ function restablecer(){
     const comentario = document.getElementById("comentario").value= "";
 }
 
-//Cancelar
+// Cancelar
 const open = document.getElementById("btn-cancelar");
 const modal_container = document.getElementById("modal_conteiner");
 const btnNo = document.getElementById("btn-no");
@@ -134,7 +129,6 @@ const btnPaginaAnterior = document.getElementById("btn-paginaAnterior");
 
 open.addEventListener('click', () =>{
     modal_container.classList.add('show');
-    
 });
 
 btnNo.addEventListener('click', () =>{
