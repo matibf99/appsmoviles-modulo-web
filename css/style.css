@@ -12,6 +12,8 @@
     --grey: #9e9e9e;
     --darker-grey: #424242;
     --black: #000;
+    --green: rgb(11, 156, 6);
+    --darker-green:  rgb(5, 88, 2);
 }
 
 * {
@@ -327,11 +329,27 @@ input:hover, input:focus, select:hover, select:focus {
     background-color: var(--main-darker);
 }
 
+.btn-filled-green:hover, .btn-filled-green:focus {
+    background-color: var(--darker-green);
+}
+
 .btn-filled-blue {
     background-color: var(--darker-grey);
 }
 
-.btn-filled-blue:hover {
+.btn-filled-green {
+    width: 100%;
+    margin: 0.3rem 0;
+    padding: 1rem 0.5rem;
+    color: var(--white);
+    background-color: var(--green);
+    font-size: 1.2rem;
+    font-weight: bold;
+    --webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.btn-filled-blue:hover, .btn-filled-blue:focus {
     background-color: var(--black);
 }
 
@@ -345,6 +363,35 @@ button {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.modal-conteiner {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 @media (min-width: 640px) {
