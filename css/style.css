@@ -8,6 +8,7 @@
     --main-darker: #ba000d;
     --main-bg: #fff;
     --white: #fff;
+    --lighter-grey: #eeeeee;
     --light-grey: #e0e0e0;
     --grey: #9e9e9e;
     --darker-grey: #424242;
@@ -72,6 +73,7 @@
 }
 
 .navbar-title {
+    display: none;
     text-decoration: none;
     color: var(--black);
     font-size: 1.7rem;
@@ -81,6 +83,7 @@
 }
 
 .navbar-subtitle {
+    display: none;
     color: var(--grey);
     font-size: 1rem;
     font-weight: bold;
@@ -88,6 +91,27 @@
 
 .navbar-title:hover {
     color: var(--darker-grey);
+}
+
+.navbar-shop-cart {
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.cart-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.cart-price:hover {
+    text-shadow:none;
+}
+
+.cart-items-count {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--grey);
 }
 
 .encuesta-invitation {
@@ -189,16 +213,26 @@
     border: 1px var(--light-grey) solid;
     transition: border 0.5s;
     -webkit-transition: border 0.5s;
+    transition: background-color 0.3s;
     text-align: center;
 }
 
 .game-card:hover {
     border: 1px var(--grey) solid;
-    background-color: rgb(182, 182, 182);
 }
 
 .game-card * {
     padding: 0 0.2rem;
+}
+
+.game-card-selected {
+    background-color: var(--lighter-grey);
+    border: 1px var(--darker-grey) solid;
+}
+
+.game-card-selected:hover {
+    background-color: var(--light-grey);
+    border: 1px var(--darker-grey) solid;
 }
 
 .game-card-image {
@@ -212,7 +246,10 @@
 
 .game-card-image:hover {
     transform: scale(1.1);
-    opacity: 0.6; //cambio de opacidad 
+}
+
+.game-card-image-selected {
+    opacity: 0.6;
 }
 
 .game-card-text-container {
@@ -256,7 +293,7 @@ input, select {
     width: 100%;
     color: var(--darker-grey);
     padding: 0.5rem 0.6rem;
-    border: 2px var(--light-grey) solid; 
+    border: 2px var(--light-grey) solid;
     background: var(--white);
     border-radius: 0.2rem;
     font-size: 1rem;
@@ -397,6 +434,14 @@ button {
 }
 
 @media (min-width: 640px) {
+    .navbar-title {
+        display: block;
+    }
+
+    .navbar-subtitle {
+        display: block;
+    }
+
     .container {
         width: 640px;
     }
@@ -428,7 +473,7 @@ button {
         font-size: 1rem;
         text-align: left;
     }
-    
+
     .categoria-selector {
         justify-content: flex-start;
     }

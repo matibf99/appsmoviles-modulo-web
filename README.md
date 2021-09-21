@@ -2,11 +2,15 @@
 
 Cada uno de los ejercicios de la práctica se encuentran resueltos en un branch o rama diferente. En la rama *master* se encuentra la última versión del proyecto, es decir, luego de haber resuelto el último ejercicio.
 
+## Prueba de la página web
+
+El servidor se levantó utilizando la extensión *Live Server* de VS Code.
+
 ## Organización de los directorios
 
 - En la carpeta *html* se encuentran los ficheros con extensión *.html*.
 - En la carpeta *css* están almacenados los ficheros con extensión *.css*.
-- En la carpeta *img* están las imágenes que utilizamos en la totalidad de la página.  
+- En la carpeta *img* están las imágenes que utilizamos en la totalidad de la página.
 - En la carpeta *js* se ubican los archivos de JavaScript.
 
 ## Materia

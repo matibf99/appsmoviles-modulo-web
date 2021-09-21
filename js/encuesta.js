@@ -92,45 +92,42 @@ email.addEventListener("input", (e) => {
     }
 });
 
-//Alertas
-let btnEnviar = document.getElementById("button-send");
-btnEnviar.addEventListener("click", enviar);
-
-function enviar(sel){
-    
+// Alertas
+const send = (e) => {
     alert("Nombre: "+ nombre.value+ "\n" +
-    "Apellido: "+ apellido.value + "\n"+
-    "Fecha de nacimiento: "+ fechaNacimiento.value + "\n"+ 
-    "Sexo: " + sexo.options[sexo.selectedIndex].text + "\n"+
-    "Valoracion: "+ valoracion.options[valoracion.selectedIndex].text + "\n"+
-    "Email: "+email.value + "\n"+
-    "Comentario: "+comentario.value);
-    
+        "Apellido: "+ apellido.value + "\n"+
+        "Fecha de nacimiento: "+ fechaNacimiento.value + "\n"+
+        "Sexo: " + sexo.options[sexo.selectedIndex].text + "\n"+
+        "Valoración: "+ valoracion.options[valoracion.selectedIndex].text + "\n"+
+        "Email: "+ email.value + "\n"+
+        "Comentario: "+ comentario.value);
 }
 
-//Restablecer valores
+let btnEnviar = document.getElementById("button-send");
+btnEnviar.addEventListener("click", send);
+
+// Restablecer valores
+const restoreValues = () => {
+    nombre.value = "";
+    apellido.value= "";;
+    fechaNacimiento.value = "";
+    sexo.value = "";
+    valoracion.value= "";
+    email.value = "";
+    comentario.value= "";
+}
+
 let btnRestart = document.getElementById("btn-restablecer");
-btnRestart.addEventListener("click", restablecer);
+btnRestart.addEventListener("click", restoreValues);
 
-function restablecer(){
-    const nombre = document.getElementById("nombre").value = "";
-    const apellido = document.getElementById("apellido").value= "";;
-    const fechaNacimiento = document.getElementById("fecha-nacimiento").value = "";
-    const sexo = document.getElementById("sexo").value = "";
-    const valoracion = document.getElementById("valoracion").value= "";
-    const email = document.getElementById("mail").value = "";
-    const comentario = document.getElementById("comentario").value= "";
-}
-
-//Cancelar
+// Cancelar
 const open = document.getElementById("btn-cancelar");
 const modal_container = document.getElementById("modal_conteiner");
 const btnNo = document.getElementById("btn-no");
-const btnPaginaAnterior = document.getElementById("btn-paginaAnterior");
+const btnPaginaAnterior = document.getElementById("btn-pagina-anterior");
 
 open.addEventListener('click', () =>{
     modal_container.classList.add('show');
-    
 });
 
 btnNo.addEventListener('click', () =>{
@@ -139,4 +136,4 @@ btnNo.addEventListener('click', () =>{
 
 btnPaginaAnterior.addEventListener('click', () => {
     window.history.back();
-})
+});
