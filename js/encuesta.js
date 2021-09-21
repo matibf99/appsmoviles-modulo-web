@@ -19,6 +19,70 @@ const validateEmail = (email) => {
     return reg.test(email);
 }
 
+// Obligatorio y sólo letras
+const checkNombre = (e) => {
+    let userInput = nombre.value;
+
+    let isValid = validateNotEmpty(userInput) && validateOnlyLetters(userInput);
+    if (isValid) {
+        invalidNombre.classList.add("invisible");
+        nombre.classList.remove("input-invalid");
+    } else {
+        invalidNombre.classList.remove("invisible");
+        nombre.classList.add("input-invalid");
+    }
+
+    return isValid;
+}
+
+// Obligatorio y sólo letras
+const checkApellido = (e) => {
+    let userInput = apellido.value;
+
+    let isValid = validateNotEmpty(userInput) && validateOnlyLetters(userInput);
+    if (isValid) {
+        invalidApellido.classList.add("invisible");
+        apellido.classList.remove("input-invalid");
+    } else {
+        invalidApellido.classList.remove("invisible");
+        apellido.classList.add("input-invalid");
+    }
+
+    return isValid;
+}
+
+// Obligatorio y con formato dd-mm-aaaa
+const checkFechaNacimiento = (e) => {
+    let userInput = fechaNacimiento.value;
+
+    let isValid = validateNotEmpty(userInput) && validateDateFormat(userInput);
+    if (isValid) {
+        invalidFechaNacimiento.classList.add("invisible");
+        fechaNacimiento.classList.remove("input-invalid");
+    } else {
+        invalidFechaNacimiento.classList.remove("invisible");
+        fechaNacimiento.classList.add("input-invalid");
+    }
+
+    return isValid;
+}
+
+// Obligatorio y con el formato adecuado, por ejemplo: 'example@gmail.com'
+const checkEmail = (e) =>  {
+    let userInput = email.value;
+
+    let isValid = validateNotEmpty(userInput) && validateEmail(userInput);
+    if (isValid) {
+        invalidEmail.classList.add("invisible");
+        email.classList.remove("input-invalid");
+    } else {
+        invalidEmail.classList.remove("invisible");
+        email.classList.add("input-invalid");
+    }
+
+    return isValid;
+}
+
 /* Form fields*/
 
 const nombre = document.getElementById("nombre");
@@ -36,71 +100,27 @@ const invalidEmail = document.getElementById("invalid-mail");
 
 /* Add validations to fields */
 
-// Obligatorio y sólo letras
-nombre.addEventListener("input", (e) => {
-    let userInput = e.target.value;
-
-    let isValid = validateNotEmpty(userInput) && validateOnlyLetters(userInput);
-    if (isValid) {
-        invalidNombre.classList.add("invisible");
-        nombre.classList.remove("input-invalid");
-    } else {
-        invalidNombre.classList.remove("invisible");
-        nombre.classList.add("input-invalid");
-    }
-});
-
-// Obligatorio y sólo letras
-apellido.addEventListener("input", (e) => {
-    let userInput = e.target.value;
-
-    let isValid = validateNotEmpty(userInput) && validateOnlyLetters(userInput);
-    if (isValid) {
-        invalidApellido.classList.add("invisible");
-        apellido.classList.remove("input-invalid");
-    } else {
-        invalidApellido.classList.remove("invisible");
-        apellido.classList.add("input-invalid");
-    }
-});
-
-// Obligatorio y con formato dd-mm-aaaa
-fechaNacimiento.addEventListener("input", (e) => {
-    let userInput = e.target.value;
-
-    let isValid = validateNotEmpty(userInput) && validateDateFormat(userInput);
-    if (isValid) {
-        invalidFechaNacimiento.classList.add("invisible");
-        fechaNacimiento.classList.remove("input-invalid");
-    } else {
-        invalidFechaNacimiento.classList.remove("invisible");
-        fechaNacimiento.classList.add("input-invalid");
-    }
-});
-
-// Obligatorio y con el formato adecuado, por ejemplo: 'example@gmail.com'
-email.addEventListener("input", (e) => {
-    let userInput = e.target.value;
-
-    let isValid = validateNotEmpty(userInput) && validateEmail(userInput);
-    if (isValid) {
-        invalidEmail.classList.add("invisible");
-        email.classList.remove("input-invalid");
-    } else {
-        invalidEmail.classList.remove("invisible");
-        email.classList.add("input-invalid");
-    }
-});
+nombre.addEventListener("input", checkNombre);
+apellido.addEventListener("input", checkApellido);
+fechaNacimiento.addEventListener("input", checkFechaNacimiento);
+email.addEventListener("input", checkEmail);
 
 // Alertas
 const send = (e) => {
-    alert("Nombre: "+ nombre.value+ "\n" +
-        "Apellido: "+ apellido.value + "\n"+
-        "Fecha de nacimiento: "+ fechaNacimiento.value + "\n"+
-        "Sexo: " + sexo.options[sexo.selectedIndex].text + "\n"+
-        "Valoración: "+ valoracion.options[valoracion.selectedIndex].text + "\n"+
-        "Email: "+ email.value + "\n"+
-        "Comentario: "+ comentario.value);
+    let allFieldsValid = checkNombre() & checkApellido() &
+        checkFechaNacimiento() & checkEmail();
+
+    if (allFieldsValid) {
+        alert("Nombre: "+ nombre.value+ "\n" +
+            "Apellido: "+ apellido.value + "\n"+
+            "Fecha de nacimiento: "+ fechaNacimiento.value + "\n"+
+            "Sexo: " + sexo.options[sexo.selectedIndex].text + "\n"+
+            "Valoración: "+ valoracion.options[valoracion.selectedIndex].text + "\n"+
+            "Email: "+ email.value + "\n"+
+            "Comentario: "+ comentario.value);
+    } else {
+        alert("Algunos campos tienen un formato inválido. Inténtelo nuevamente.")
+    }
 }
 
 let btnEnviar = document.getElementById("button-send");
