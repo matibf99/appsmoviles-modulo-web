@@ -194,6 +194,7 @@
 
 .game-card:hover {
     border: 1px var(--grey) solid;
+    background-color: rgb(182, 182, 182);
 }
 
 .game-card * {
@@ -211,6 +212,7 @@
 
 .game-card-image:hover {
     transform: scale(1.1);
+    opacity: 0.6; //cambio de opacidad 
 }
 
 .game-card-text-container {
