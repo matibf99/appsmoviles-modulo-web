@@ -194,7 +194,7 @@
 
 .game-card:hover {
     border: 1px var(--grey) solid;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(255, 190, 190);
 }
 
 .game-card * {
