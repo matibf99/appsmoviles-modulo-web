@@ -1,7 +1,7 @@
 /* Validation functions */
 
 const validateNotEmpty = (text) => {
-    return !(text.trim() == "" || text.trim() == null);
+    return !(text.trim() == "" || text.trim() == null || text.trim().length == 0);
 }
 
 const validateOnlyLetters = (text) => {
@@ -67,6 +67,38 @@ const checkFechaNacimiento = (e) => {
     return isValid;
 }
 
+// Obligatorio
+const checkSexo = (e) => {
+    let isValid = !(sexo.options[sexo.selectedIndex] == undefined);
+
+    if (isValid)
+        isValid = validateNotEmpty(sexo.options[sexo.selectedIndex].text);
+
+    if (isValid) {
+        invalidSexo.classList.add("invisible");
+        sexo.classList.remove("input-invalid");
+    } else {
+        invalidSexo.classList.remove("invisible");
+        sexo.classList.add("input-invalid");
+    }
+}
+
+// Oblitorio
+const checkValoracion = (e) => {
+    let isValid = !(valoracion.options[valoracion.selectedIndex] == undefined);
+
+    if (isValid)
+        isValid = validateNotEmpty(valoracion.options[valoracion.selectedIndex].text);
+
+    if (isValid) {
+        invalidValoracion.classList.add("invisible");
+        valoracion.classList.remove("input-invalid");
+    } else {
+        invalidValoracion.classList.remove("invisible");
+        valoracion.classList.add("input-invalid");
+    }
+}
+
 // Obligatorio y con el formato adecuado, por ejemplo: 'example@gmail.com'
 const checkEmail = (e) =>  {
     let userInput = email.value;
@@ -96,6 +128,8 @@ const comentario = document.getElementById("comentario");
 const invalidNombre = document.getElementById("invalid-nombre");
 const invalidApellido = document.getElementById("invalid-apellido");
 const invalidFechaNacimiento = document.getElementById("invalid-fecha-nacimiento");
+const invalidSexo = document.getElementById("invalid-sexo");
+const invalidValoracion = document.getElementById("invalid-valoracion");
 const invalidEmail = document.getElementById("invalid-mail");
 
 /* Add validations to fields */
@@ -108,6 +142,7 @@ email.addEventListener("input", checkEmail);
 // Alertas
 const send = (e) => {
     let allFieldsValid = checkNombre() & checkApellido() &
+        checkSexo() & checkValoracion() &
         checkFechaNacimiento() & checkEmail();
 
     if (allFieldsValid) {
