@@ -28,6 +28,10 @@ El objeto JSON que representará cada uno de los juegos presentados en la aplica
 }
 ```
 
+## Link del archivo JSON
+
+El archivo JSON se encuentra en el siguiente [link](https://api.json-generator.com/templates/R2MxLIGJNpE8/data). El *access token* para acceder a este archivo es: **rshp2b2b8ow36anxnh31ficqfs7iiyal8xy12iuo**.
+
 ## Materia
 
 Aplicaciones móviles 2C 2021. Universidad Nacional Arturo Jauretche.
