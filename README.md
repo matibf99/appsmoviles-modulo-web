@@ -13,6 +13,21 @@ El servidor se levantó utilizando la extensión *Live Server* de VS Code.
 - En la carpeta *img* están las imágenes que utilizamos en la totalidad de la página.
 - En la carpeta *js* se ubican los archivos de JavaScript.
 
+## Formato del objeto JSON
+
+El objeto JSON que representará cada uno de los juegos presentados en la aplicación será el siguiente:
+
+```json=
+{
+    "id": 1,
+    "imagen": "/img/imagen.png",
+    "nombre": "Nombre del juego",
+    "precio": 2000.00,
+    "categoria": "Acción",
+    "descripcion": "El juego es ..."
+}
+```
+
 ## Materia
 
 Aplicaciones móviles 2C 2021. Universidad Nacional Arturo Jauretche.
